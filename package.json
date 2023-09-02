@@ -1,4 +1,5 @@
 {
+  "homepage": "https://arrrpark.github.io/blog",
   "name": "blog",
   "version": "0.1.0",
   "private": true,
@@ -44,6 +45,5 @@
   },
   "devDependencies": {
     "gh-pages": "^6.0.0"
-  },
-  "homepage": "https://github.com/arrrpark/blog"
+  }
 }
