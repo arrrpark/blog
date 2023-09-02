@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 
 import "./App.css";
 import Page1 from "./pages/page1";
@@ -9,14 +9,15 @@ function App() {
   return (
     <div className="App">
       <p>Hello</p>
-      <BrowserRouter>
-        <Route exact path="/blog/page1">
-          <Page1 />
-        </Route>
-        <Route exact path="/blog/page2">
-          <Page2 />
-        </Route>
-      </BrowserRouter>
+      <Link to="/page1">page1</Link>
+      <Link to="/page2">page2</Link>
+
+      <Route exact path="/page1">
+        <Page1 />
+      </Route>
+      <Route exact path="/page2">
+        <Page2 />
+      </Route>
     </div>
   );
 }
