@@ -2,7 +2,6 @@ import { Route, Link } from "react-router-dom";
 import "./App.css";
 import styled from "styled-components";
 import { BigTitle } from "./components/styledComponents";
-import Editor from "react-simple-code-editor";
 import { useState } from "react";
 import { CodeBlock } from "@atlaskit/code";
 
