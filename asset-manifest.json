@@ -1,15 +1,17 @@
 {
   "files": {
     "main.css": "/blog/static/css/main.bef7cc19.css",
-    "main.js": "/blog/static/js/main.f4a3c96e.js",
+    "main.js": "/blog/static/js/main.5bfe1663.js",
+    "@atlaskit-internal_refractor-import.js": "/blog/static/js/@atlaskit-internal_refractor-import.818bc9b4.chunk.js",
     "static/js/787.f587e8d5.chunk.js": "/blog/static/js/787.f587e8d5.chunk.js",
     "index.html": "/blog/index.html",
     "main.bef7cc19.css.map": "/blog/static/css/main.bef7cc19.css.map",
-    "main.f4a3c96e.js.map": "/blog/static/js/main.f4a3c96e.js.map",
+    "main.5bfe1663.js.map": "/blog/static/js/main.5bfe1663.js.map",
+    "@atlaskit-internal_refractor-import.818bc9b4.chunk.js.map": "/blog/static/js/@atlaskit-internal_refractor-import.818bc9b4.chunk.js.map",
     "787.f587e8d5.chunk.js.map": "/blog/static/js/787.f587e8d5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bef7cc19.css",
-    "static/js/main.f4a3c96e.js"
+    "static/js/main.5bfe1663.js"
   ]
 }
