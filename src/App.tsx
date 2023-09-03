@@ -1,8 +1,12 @@
 import { Route, Link } from "react-router-dom";
 import "./App.css";
-import Page1 from "./pages/page1";
-import Page2 from "./pages/page2";
 import styled from "styled-components";
+import { BigTitle } from "./components/styledComponents";
+import Editor from "react-simple-code-editor";
+import { useState } from "react";
+import { CodeBlock } from "@atlaskit/code";
+
+// npm i --save-dev @types/prismjs
 
 const Container = styled.div`
   display: flex;
@@ -10,7 +14,7 @@ const Container = styled.div`
 
 const Menu = styled.div`
   height: calc(100vh);
-  position: sticky;
+  position: fixed;
   align-content: center;
 
   // top: 50px;
@@ -20,8 +24,9 @@ const Menu = styled.div`
   padding: 20px;
 `;
 
-const BigTitle = styled.div`
-  font-size: larger;
+const TransparentBackground = styled.div`
+  width: 250px;
+  padding: 20px;
 `;
 
 const Right = styled.div`
@@ -30,7 +35,24 @@ const Right = styled.div`
   // background-color: #aaa;
 `;
 
+const code = `
+let a = [1,2,3]
+let b = [4,5,6]
+
+func intToArray(_ num: Int) -> [] {
+    return [num]
+}
+`;
+
+const CodeBlockExample = () => {
+  return <CodeBlock language="swift" showLineNumbers={false} text={code} />;
+};
+
 function App() {
+  const [code, setCode] = useState<string>(
+    `function add(a, b) {\n  return a + b;\n}`
+  );
+
   return (
     <Container>
       <Menu>
@@ -38,8 +60,9 @@ function App() {
 
         <BigTitle>From Objective-C to Swift</BigTitle>
       </Menu>
+      <TransparentBackground />
       <Right>
-        <div>Hello</div>
+        <CodeBlockExample />
       </Right>
     </Container>
   );
