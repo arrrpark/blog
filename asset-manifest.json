@@ -1,23 +1,26 @@
 {
   "files": {
     "main.css": "/blog/static/css/main.bef7cc19.css",
-    "main.js": "/blog/static/js/main.d3d8f34c.js",
+    "main.js": "/blog/static/js/main.c0c5677f.js",
     "@atlaskit-internal_refractor-import.js": "/blog/static/js/@atlaskit-internal_refractor-import.0ca075a9.chunk.js",
     "static/js/787.f587e8d5.chunk.js": "/blog/static/js/787.f587e8d5.chunk.js",
     "static/media/byMajor.png": "/blog/static/media/byMajor.6086aebe3b6f522c417a.png",
     "static/media/byAge.png": "/blog/static/media/byAge.940a34be5c5ab287795c.png",
+    "static/media/nextYearTool.png": "/blog/static/media/nextYearTool.c44caf14076f2e4ac3de.png",
     "static/media/byDegree.png": "/blog/static/media/byDegree.f56a86a85988d05450e8.png",
     "static/media/byGender.png": "/blog/static/media/byGender.15ccb5fd675ac220b553.png",
+    "static/media/salaryByGender.png": "/blog/static/media/salaryByGender.6c451ea4e1e63bb11eda.png",
     "static/media/byCountry.png": "/blog/static/media/byCountry.bc76edce73851ad5d4cd.png",
+    "static/media/medianSalary.png": "/blog/static/media/medianSalary.087c07be40188aefa54c.png",
     "static/media/byExperience.png": "/blog/static/media/byExperience.4cfa428edd88ae442a92.png",
     "index.html": "/blog/index.html",
     "main.bef7cc19.css.map": "/blog/static/css/main.bef7cc19.css.map",
-    "main.d3d8f34c.js.map": "/blog/static/js/main.d3d8f34c.js.map",
+    "main.c0c5677f.js.map": "/blog/static/js/main.c0c5677f.js.map",
     "@atlaskit-internal_refractor-import.0ca075a9.chunk.js.map": "/blog/static/js/@atlaskit-internal_refractor-import.0ca075a9.chunk.js.map",
     "787.f587e8d5.chunk.js.map": "/blog/static/js/787.f587e8d5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bef7cc19.css",
-    "static/js/main.d3d8f34c.js"
+    "static/js/main.c0c5677f.js"
   ]
 }
