@@ -4,6 +4,7 @@ import Survey from "./pages/surveyProject";
 import Bike from "./pages/bikeProject";
 import Intro from "./pages/intro";
 import ClimageChange from './pages/climageChange';
+import ECommerce from './pages/eCommerce';
 import styled, { createGlobalStyle } from "styled-components";
 
 function App() {
@@ -24,12 +25,16 @@ function App() {
           <Link to="/climate" style={{color: 'inherit', textDecoration: 'none'}}>
             <SemiTitle>NLP on climate change</SemiTitle>
           </Link>
+          <Link to="/ecommerce" style={{color: 'inherit', textDecoration: 'none'}}>
+            <SemiTitle>Ecommerce data analysis</SemiTitle>
+          </Link>
         </Menu>
         
         <Route exact path="/" component={Intro} />
         <Route exact path="/survey" component={Survey} />
         <Route exact path="/bike" component={Bike} />
         <Route exact path="/climate" component={ClimageChange} />
+        <Route exact path="/ecommerce" component={ECommerce} />
       </Container>
     </>
   );

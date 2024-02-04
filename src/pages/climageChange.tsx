@@ -1,7 +1,6 @@
 
 import styled from "styled-components";
 import { Container, BigTitle, DefaultDiv, MenuDiv, SemiTitle, NumberTitle } from "../components/CommonComponents";
-import { CodeBlock } from '@atlaskit/code';
 import twitData from '../images/twitData.png';
 import unigram from '../images/unigram.png';
 import wordCloudUni from '../images/wordCloudUni.png';
@@ -17,7 +16,7 @@ export default function Bike() {
     The primary objective of this project is to conduct a comprehensive NLP analysis on public opinion based on twitter/reddit.
   </DefaultDiv>
   <SemiTitle>
-    This project uses data Twitter and Reddit that are scraped from Twink and Pmaw packages.
+    This project uses data from Twitter and Reddit that are scraped through Twink and Pmaw packages.
   </SemiTitle>
   <div>
     <a target="_blank" href="https://github.com/twintproject/twint">
@@ -26,7 +25,7 @@ export default function Bike() {
   </div>
   <div>
     <a target="_blank" href="https://pypi.org/project/pmaw/0.0.2/">
-        https://github.com/twintproject/twint
+      https://pypi.org/project/pmaw/0.0.2/
     </a>
   </div>
   <SemiTitle>
