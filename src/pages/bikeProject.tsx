@@ -10,7 +10,7 @@ import adjustedWind from '../images/adjustedWind.png';
 import bikeScore from '../images/bikeScore.png';
 import bikeRank from '../images/bikeRank.png';
 
-export default function Page2() {
+export default function Bike() {
   return (<Container>
   <BigTitle>Data visualization and prediction on the count of bike rental</BigTitle>
   <DefaultDiv>

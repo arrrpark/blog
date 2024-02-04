@@ -2,14 +2,18 @@ import { Route, Link } from "react-router-dom";
 import "./App.css";
 import Survey from "./pages/surveyProject";
 import Bike from "./pages/bikeProject";
-import styled from "styled-components";
-import { CodeBlock } from '@atlaskit/code';
+import Intro from "./pages/intro";
+import styled, { createGlobalStyle } from "styled-components";
 
 function App() {
   return (
+    <>
+      <GlobalStyle />
       <Container>
         <Menu>
+          <Link to="/" style={{color: 'inherit', textDecoration: 'none'}}>
           <MenuTitle>Data science projects</MenuTitle>
+          </Link>
           <Link to="/survey" style={{color: 'inherit', textDecoration: 'none'}}>
             <SemiTitle>- Survey on data scientists</SemiTitle>
           </Link>
@@ -17,12 +21,12 @@ function App() {
             <SemiTitle>- Prediction on bike rental rate</SemiTitle>
           </Link>
         </Menu>
-        {/* <Right>
-         
-        </Right> */}
+        
+        <Route exact path="/" component={Intro} />
         <Route exact path="/survey" component={Survey} />
         <Route exact path="/bike" component={Bike} />
       </Container>
+    </>
   );
 }
 
@@ -51,6 +55,12 @@ const SemiTitle = styled.div`
   font-size: 15px;
   padding-top: 5px;
   padding-left: 20px;
+`
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    font-family: 'OpenSans_Condensed-Regular', sans-serif
+  }
 `
 
 export default App;

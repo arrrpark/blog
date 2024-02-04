@@ -12,7 +12,7 @@ import nextYearTool from '../images/nextYearTool.png';
 import medianSalary from '../images/medianSalary.png';
 import salaryByGender from '../images/salaryByGender.png';
 
-export default function Page1() {
+export default function Survey() {
   return (
     <Container>
       <BigTitle>Anaylsis & data visualization on programmers in the field of data science</BigTitle>
