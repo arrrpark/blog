@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Container, BigTitle, MenuDiv, SemiTitle, NumberTitle } from "../components/CommonComponents";
+import { Container, SemiTitle } from "../components/CommonComponents";
 
 export default function Intro() {
     return (<Container>
@@ -12,7 +12,7 @@ export default function Intro() {
         <DefaultDiv>👩🏼‍💻 As a mobile developer, I'm also interested in corporating AI technologies into a mobile app.</DefaultDiv>
         <DefaultDiv>🌲 These projects use data from Kaggle and open-source.
             Analysis and visualization are done via python and basic libraries such as Numpy, Pandas, Scipy, Matplotlib and Seaborn.</DefaultDiv>
-        <DefaultDiv>🛠 This website is made through React, Typescript, github-pages. 100% made by myself.</DefaultDiv>
+        <DefaultDiv>🛠 This website is made using React, Typescript and github-pages. 100% made by myself.</DefaultDiv>
     </Container>)
 }
 

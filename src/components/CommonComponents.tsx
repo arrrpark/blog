@@ -1,5 +1,4 @@
 import styled from "styled-components";
-{/* <div style={{padding: 30, paddingLeft:330}}></div> */}
 
 export const Container = styled.div`
   padding: 30px;
