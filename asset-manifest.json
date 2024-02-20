@@ -1,9 +1,10 @@
 {
   "files": {
     "main.css": "/blog/static/css/main.bef7cc19.css",
-    "main.js": "/blog/static/js/main.582478e6.js",
-    "@atlaskit-internal_refractor-import.js": "/blog/static/js/@atlaskit-internal_refractor-import.0ca075a9.chunk.js",
+    "main.js": "/blog/static/js/main.176bc6b1.js",
+    "@atlaskit-internal_refractor-import.js": "/blog/static/js/@atlaskit-internal_refractor-import.9ee0ce9c.chunk.js",
     "static/js/787.f587e8d5.chunk.js": "/blog/static/js/787.f587e8d5.chunk.js",
+    "static/media/franchiseMap.png": "/blog/static/media/franchiseMap.034f61111f1696169235.png",
     "static/media/bigramBoth.png": "/blog/static/media/bigramBoth.6ea090916bb62f3d5a0d.png",
     "static/media/wordCloudUni.png": "/blog/static/media/wordCloudUni.99b438f3d2b26022da40.png",
     "static/media/bikeUsage.png": "/blog/static/media/bikeUsage.9bfbe4a350a31107f93c.png",
@@ -13,8 +14,11 @@
     "static/media/workingHour.png": "/blog/static/media/workingHour.9454cdfe656b53e32701.png",
     "static/media/adjustedWind.png": "/blog/static/media/adjustedWind.4f7f88904df591be2c5c.png",
     "static/media/sentimentAnalysis.png": "/blog/static/media/sentimentAnalysis.f2c84bedbfcabad83eb4.png",
+    "static/media/franchiseScatter.png": "/blog/static/media/franchiseScatter.1c5d660a79ed4685e8f9.png",
     "static/media/twitterSentiment.png": "/blog/static/media/twitterSentiment.94d516ff91430299af02.png",
     "static/media/redditSentiment.png": "/blog/static/media/redditSentiment.e52043360a2d60770f54.png",
+    "static/media/totalFranchiseBar.png": "/blog/static/media/totalFranchiseBar.3822ccf7ce8d80c4329e.png",
+    "static/media/originalCSV.png": "/blog/static/media/originalCSV.2a7774d4b399403186b1.png",
     "static/media/byMajor.png": "/blog/static/media/byMajor.6086aebe3b6f522c417a.png",
     "static/media/customerPairplot.png": "/blog/static/media/customerPairplot.0fec34c99620431404cf.png",
     "static/media/byAge.png": "/blog/static/media/byAge.940a34be5c5ab287795c.png",
@@ -27,15 +31,17 @@
     "static/media/byCountry.png": "/blog/static/media/byCountry.bc76edce73851ad5d4cd.png",
     "static/media/medianSalary.png": "/blog/static/media/medianSalary.087c07be40188aefa54c.png",
     "static/media/commerceHeatMap.png": "/blog/static/media/commerceHeatMap.277d23096924bc577f11.png",
+    "static/media/franchiseBarByLocation.png": "/blog/static/media/franchiseBarByLocation.7a68c504be6019623ad4.png",
+    "static/media/extractedCSV.png": "/blog/static/media/extractedCSV.5a888dff0fbddc7ff29a.png",
     "static/media/byExperience.png": "/blog/static/media/byExperience.4cfa428edd88ae442a92.png",
     "index.html": "/blog/index.html",
     "main.bef7cc19.css.map": "/blog/static/css/main.bef7cc19.css.map",
-    "main.582478e6.js.map": "/blog/static/js/main.582478e6.js.map",
-    "@atlaskit-internal_refractor-import.0ca075a9.chunk.js.map": "/blog/static/js/@atlaskit-internal_refractor-import.0ca075a9.chunk.js.map",
+    "main.176bc6b1.js.map": "/blog/static/js/main.176bc6b1.js.map",
+    "@atlaskit-internal_refractor-import.9ee0ce9c.chunk.js.map": "/blog/static/js/@atlaskit-internal_refractor-import.9ee0ce9c.chunk.js.map",
     "787.f587e8d5.chunk.js.map": "/blog/static/js/787.f587e8d5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bef7cc19.css",
-    "static/js/main.582478e6.js"
+    "static/js/main.176bc6b1.js"
   ]
 }
