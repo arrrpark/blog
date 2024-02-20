@@ -7,7 +7,7 @@ import extractedCSV from '../images/extractedCSV.png';
 import franchiseBarByLocation from '../images/franchiseBarByLocation.png';
 import totalFranchiseBar from '../images/totalFranchiseBar.png';
 import franchiseScatter from '../images/franchiseScatter.png';
-import franchiseMap from '../images/franchiseMap.png';
+import franchiseMap from '../images/franchiseMap.gif';
 
 export default function Franchise() {
   return (<Container>
