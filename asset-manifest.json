@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/blog/static/css/main.bef7cc19.css",
-    "main.js": "/blog/static/js/main.176bc6b1.js",
-    "@atlaskit-internal_refractor-import.js": "/blog/static/js/@atlaskit-internal_refractor-import.9ee0ce9c.chunk.js",
+    "main.js": "/blog/static/js/main.43faea6f.js",
+    "@atlaskit-internal_refractor-import.js": "/blog/static/js/@atlaskit-internal_refractor-import.c169d35d.chunk.js",
     "static/js/787.f587e8d5.chunk.js": "/blog/static/js/787.f587e8d5.chunk.js",
-    "static/media/franchiseMap.png": "/blog/static/media/franchiseMap.034f61111f1696169235.png",
     "static/media/bigramBoth.png": "/blog/static/media/bigramBoth.6ea090916bb62f3d5a0d.png",
     "static/media/wordCloudUni.png": "/blog/static/media/wordCloudUni.99b438f3d2b26022da40.png",
     "static/media/bikeUsage.png": "/blog/static/media/bikeUsage.9bfbe4a350a31107f93c.png",
     "static/media/probBikes.png": "/blog/static/media/probBikes.e83f80c8e9b8e0c81ab1.png",
+    "static/media/franchiseMap.gif": "/blog/static/media/franchiseMap.16cc0af3a14230f6d178.gif",
     "static/media/factorsToCount.png": "/blog/static/media/factorsToCount.e3df6747e6899a0f550a.png",
     "static/media/unigram.png": "/blog/static/media/unigram.c05da279e572a7466067.png",
     "static/media/workingHour.png": "/blog/static/media/workingHour.9454cdfe656b53e32701.png",
@@ -36,12 +36,12 @@
     "static/media/byExperience.png": "/blog/static/media/byExperience.4cfa428edd88ae442a92.png",
     "index.html": "/blog/index.html",
     "main.bef7cc19.css.map": "/blog/static/css/main.bef7cc19.css.map",
-    "main.176bc6b1.js.map": "/blog/static/js/main.176bc6b1.js.map",
-    "@atlaskit-internal_refractor-import.9ee0ce9c.chunk.js.map": "/blog/static/js/@atlaskit-internal_refractor-import.9ee0ce9c.chunk.js.map",
+    "main.43faea6f.js.map": "/blog/static/js/main.43faea6f.js.map",
+    "@atlaskit-internal_refractor-import.c169d35d.chunk.js.map": "/blog/static/js/@atlaskit-internal_refractor-import.c169d35d.chunk.js.map",
     "787.f587e8d5.chunk.js.map": "/blog/static/js/787.f587e8d5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bef7cc19.css",
-    "static/js/main.176bc6b1.js"
+    "static/js/main.43faea6f.js"
   ]
 }
