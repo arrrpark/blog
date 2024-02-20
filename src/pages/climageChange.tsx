@@ -9,9 +9,9 @@ import sentimentAnalaysis from '../images/sentimentAnalysis.png';
 import twitterSentiment from '../images/twitterSentiment.png';
 import redditSentiment from '../images/redditSentiment.png';
 
-export default function Bike() {
+export default function ClimateChange() {
   return (<Container>
-  <BigTitle>Comprehensive NLP on climate change using Twitter and Reddit data</BigTitle>
+  <BigTitle>NLP on climate change using Twitter and Reddit data</BigTitle>
   <DefaultDiv>
     The primary objective of this project is to conduct a comprehensive NLP analysis on public opinion based on twitter/reddit.
   </DefaultDiv>

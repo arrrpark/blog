@@ -5,6 +5,7 @@ import Bike from "./pages/bikeProject";
 import Intro from "./pages/intro";
 import ClimageChange from './pages/climageChange';
 import ECommerce from './pages/eCommerce';
+import Franchise from "./pages/franchise";
 import styled, { createGlobalStyle } from "styled-components";
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
           <Link to="/survey" style={{color: 'inherit', textDecoration: 'none'}}>
             <SemiTitle>Survey on data scientists</SemiTitle>
           </Link>
+          <Link to="/franchise" style={{color: 'inherit', textDecoration: 'none'}}>
+            <SemiTitle>Comparing the locations of two franchise</SemiTitle>
+          </Link>
           <Link to="/bike" style={{color: 'inherit', textDecoration: 'none'}}>
             <SemiTitle>Prediction on bike rental rate</SemiTitle>
           </Link>
@@ -31,6 +35,7 @@ function App() {
         </Menu>
         
         <Route exact path="/" component={Intro} />
+        <Route exact path="/franchise" component={Franchise} />
         <Route exact path="/survey" component={Survey} />
         <Route exact path="/bike" component={Bike} />
         <Route exact path="/climate" component={ClimageChange} />

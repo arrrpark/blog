@@ -12,7 +12,7 @@ export default function Intro() {
         <DefaultDiv>👩🏼‍💻 As a mobile developer, I'm also interested in corporating AI technologies into a mobile app.</DefaultDiv>
         <DefaultDiv>🌲 These projects use data from Kaggle and open-source.
             Analysis and visualization are done via python and basic libraries such as Numpy, Pandas, Scipy, Matplotlib and Seaborn.
-            These projects are a record of my work based on various courses such as Udemy and Coursera.</DefaultDiv>
+            These projects are a record of my work based on various data science courses such as Udemy and Coursera.</DefaultDiv>
         <DefaultDiv>🛠 This website is made using React, Typescript and github-pages. 100% made by myself.</DefaultDiv>
     </Container>)
 }
