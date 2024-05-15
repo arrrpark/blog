@@ -55,7 +55,8 @@ const Menu = styled.div`
   top: 0;
   width: 250px;
   height: 100vh;
-  align-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
 
   background-color: #333; /* Sidebar background color */
   color: #fff; /* Text color */
