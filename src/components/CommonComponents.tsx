@@ -12,7 +12,6 @@ export const Menu = styled.div`
   position: sticky;
   align-content: center;
 
-  // top: 50px;
   width: 250px; /* Adjust the width as needed */
   background-color: #333; /* Sidebar background color */
   color: #fff; /* Text color */
