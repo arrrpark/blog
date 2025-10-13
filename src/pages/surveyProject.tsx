@@ -1,126 +1,187 @@
-
-import styled from "styled-components";
-import { Container, BigTitle, DefaultDiv, MenuDiv, SemiTitle, NumberTitle } from "../components/CommonComponents";
+import styled from 'styled-components';
+import {
+  Container,
+  BigTitle,
+  DefaultDiv,
+  MenuDiv,
+  SemiTitle,
+  NumberTitle,
+} from '../components/CommonComponents';
 import { CodeBlock } from '@atlaskit/code';
-import byGender from '../images/byGender.png'
-import byCountry from '../images/byCountry.png';
-import byDegree from '../images/byDegree.png';
-import byAge from '../images/byAge.png';
-import byMajor from '../images/byMajor.png';
-import byExperience from '../images/byExperience.png';
-import nextYearTool from '../images/nextYearTool.png';
-import medianSalary from '../images/medianSalary.png';
-import salaryByGender from '../images/salaryByGender.png';
+
+import {
+  surveyExploration,
+  byGender,
+  byCountry,
+  byDegree,
+  byAge,
+  byMajor,
+  bigdataPref,
+  cloudPref,
+  languagePref,
+  mllibraryPref,
+  mlservicePref,
+  rdbPref,
+  vizPref,
+  kernelPref,
+} from '../images/survey';
 
 export default function Survey() {
   return (
     <Container>
-      <BigTitle>Anaylsis & data visualization on programmers in the field of data science</BigTitle>
+      <BigTitle>
+        Anaylsis & data visualization on programmers in the field of data
+        science
+      </BigTitle>
       <DefaultDiv>
-        The primary objective of this project is to investigate the status of individuals who are either learning or working in the field of data science.
-        This status includes factors such as gender, country, age, major and work experience details.
+        As a software engineer transitioning toward Data and AI, I wanted to
+        gain a concrete understanding of how professionals in this field
+        actually work. This project will explore their backgrounds, the tools
+        they use, and where they are located. As a software engineer
+        transitioning toward Data and AI, I wanted to gain a concrete
+        understanding of how professionals in this field actually work. This
+        project will explore their backgrounds, the tools they use, and where
+        they are located.
+        <br />
+        <br />
+        Using the Kaggle survey dataset, I visualized key aspects such as
+        respondents’ country, education, and preferred coding environments
+        (e.g., Kaggle Kernels, Google Colab). This exploration helps beginners
+        like me see the overall ecosystem of Data and AI practitioners and
+        identify which technologies are most relevant to focus on.
       </DefaultDiv>
       <SemiTitle>
-        This project uses data from Kaggle
+        Dataset Overview: This project uses data from Kaggle
       </SemiTitle>
       <div>
-        <a target="_blank" href="https://www.kaggle.com/datasets/kaggle/kaggle-survey-2017">https://www.kaggle.com/datasets/kaggle/kaggle-survey-2017 </a>
+        <a
+          target="_blank"
+          href="https://www.kaggle.com/datasets/kaggle/kaggle-survey-2025"
+        >
+          https://www.kaggle.com/datasets/kaggle/kaggle-survey-2025{' '}
+        </a>
       </div>
       <MenuDiv>
         The Collected data has following characteristics.
-        <div>- The survey period was from August 7th to August 25th in 2017.</div>
-        <div>- The servey was participated in by 16716 respondents from 171 countries.</div>
-        <div>- Most of the respondents were found mainly through Kaggle channels, such as email list, discussion forums and SNS channels</div>
-        <div>- Different questions were asked between those who are employed and who are not</div>
+        <div>
+          - The survey period was from August 7th to August 25th in 2025.
+        </div>
+        <div>- The servey was participated in by 23589 respondents.</div>
+        <div>
+          - Most of the respondents were found mainly through Kaggle channels,
+          such as email list, discussion forums and SNS channels
+        </div>
       </MenuDiv>
-      <MenuDiv>
-        <div>It consists of the following 5 CSV files.</div>
-        <div>- schema.csv : a CSV file with survey schema. </div>
-        <div>- multipleChoiseResponse.csv : Respondents' answers to multiple choice and ranking questions.</div>
-        <div>- freeFormResponse.csv: Respondents' freeform answers to Kaggle's survey questions.</div>
-        <div>- conversionRates.csv : Currency conversion rates (to USD) as accessed from the R Package "quantmod" on September 14, 2017.</div>
-        <div>- RespondentTypeREADME.txt : This is a schema for decoding the responses in the "Asked" column of the schema.csv file </div>
-      </MenuDiv>
-      <SemiTitle>
-        Used tools
-      </SemiTitle>
-      <MenuDiv>
-        - Pandas, Numpy, Matplotlib, Seaborn
-      </MenuDiv>
-      <SemiTitle>
-        Data analysis & visualization
-      </SemiTitle>
+      <SemiTitle>Used tools</SemiTitle>
+      <MenuDiv style={{ paddingTop: 0 }}>- R, ggplot2, dplyr, tidyr</MenuDiv>
+      <SemiTitle>Libary setting & Data exploration</SemiTitle>
+      <CodeBlock language="R" text={exploration}></CodeBlock>
+      <ChartImg src={surveyExploration} style={{ width: 1200, height: 230 }} />
+      <DefaultDiv style={{ paddingTop: 10 }}>
+        By inspecting the CSV file, we can see that variables such as gender,
+        age, country, degree, and major are categorical responses. Meanwhile,
+        the sections about kernel tools, cloud platforms, ML libraries, and
+        programming languages are recorded in a wide format, where each tool has
+        its own column. To visualize these later, it is necessary to reshape the
+        data into a long format using pivot_longer(). Since the original column
+        names are not immediately suitable for processing in R, they will also
+        need to be renamed appropriately during preprocessing.
+      </DefaultDiv>
+      <SemiTitle>Demographic analysis</SemiTitle>
+      <DefaultDiv style={{ paddingTop: 0, paddingBottom: 10 }}>
+        In the demographic section, I will focus on analyzing Gender, Age,
+        Country, Degree, and Major. These variables are located in columns 2, 4,
+        5, 6, and 7 of the CSV file. Since the data in its original form is not
+        immediately ready for analysis in R, it needs to be cleaned and
+        preprocessed using the following code.
+      </DefaultDiv>
+      <CodeBlock
+        language="R"
+        text='names(response)[c(2,4,5,6,7)] <- c("Gender", "Age", "Country", "Degree", "Major")'
+      />
+      <NumberTitle style={{ marginTop: 20 }}>
+        {' '}
+        1. Top 10 countries with the most responses{' '}
+      </NumberTitle>
+      <CodeBlock language="R" text={countryCode} />
+      <ChartImg style={{ width: 500, height: 500 }} src={byCountry} />
+      <NumberTitle> 2. Number of respondents by age </NumberTitle>
+      <CodeBlock language="R" text={ageCode} />
+      <ChartImg style={{ width: 500, height: 500 }} src={byAge} />
+      <NumberTitle> 3. Distrbution of respondents' majors </NumberTitle>
+      <CodeBlock language="R" text={majorCode} />
+      <ChartImg style={{ width: 1000, height: 500 }} src={byMajor} />
+      <NumberTitle>4. Distrbution of respondents' gender</NumberTitle>
+      <CodeBlock language="R" text={genderCode} />
+      <ChartImg style={{ width: 500, height: 500 }} src={byGender} />
+      <NumberTitle>5. Distrbution of respondents' degree</NumberTitle>
+      <CodeBlock language="R" text={degreeCode} />
+      <MajorImg style={{ width: 500, height: 500 }} src={byDegree} />
+      <SemiTitle style={{ paddingTop: 40 }}>Technical Stack Analysis</SemiTitle>
+      <DefaultDiv style={{ paddingTop: 0, paddingBottom: 10 }}>
+        All questions related to the tech stack are multiple-choice, and the
+        data for these questions are stored in a wide format. The items I wanted
+        to analyze are listed below. Since the same pivot_longer() operation and
+        visualization code will be used repeatedly for these sections, I created
+        a function to avoid code duplication and follow the DRY (Don't Repeat
+        Yourself) principle.
+      </DefaultDiv>
+      <CodeBlock language="R" text={longerAndGraph} />
+      <NumberTitle style={{ paddingTop: 20 }}>
+        1. Which kernel do you use most?
+      </NumberTitle>
+      <CodeBlock language="R" text={kernelCode} />
+      <ChartImg style={{ width: 400, height: 400 }} src={kernelPref} />
 
-      <NumberTitle> 1. Number of respondents by gender. </NumberTitle>
-      <CodeBlock language="python" text={genderCode}/>
-      <ChartImg src={byGender}/>
-      <DefaultDiv>
-        About 80% of the total respondents are male, whereas only 16% are women. It is clearly seen that the major gender in data science is male.
-      </DefaultDiv>
+      <NumberTitle style={{ paddingTop: 20 }}>
+        2. Which cloud platform do you use most?
+      </NumberTitle>
+      <CodeBlock language="R" text={cloudCode} />
+      <ChartImg style={{ width: 400, height: 400 }} src={cloudPref} />
 
-      <NumberTitle> 2. Number of respondents by country. </NumberTitle>
-      <CodeBlock language="python" text={countryCode}/>
-      <ChartImg src={byCountry}/>
-      <DefaultDiv>
-        The United States had the highest number with 4,197, followed by India, Russia, and the United Kingdom.
-        It appears clearly that advanced countries are dominant, excluding countries with large populations such as India, China, and Brazil.
-      </DefaultDiv>
-      
-      <NumberTitle> 3. Number of respondents by age. </NumberTitle>
-      <CodeBlock language="python" text={ageCode}/>
-      <ChartImg src={byAge}/>
-      <DefaultDiv>
-        Most of the respondents are aged between 20's and 30's. The respondents rate falls sharply as they enter into 40's, 50's, and 60's.
-      </DefaultDiv>
+      <NumberTitle style={{ paddingTop: 20 }}>
+        2. Which cloud platform do you use most?
+      </NumberTitle>
+      <CodeBlock language="R" text={kernelCode} />
+      <ChartImg style={{ width: 400, height: 400 }} src={cloudPref} />
 
-      <NumberTitle>4. Respondents' degree.</NumberTitle>
-      <CodeBlock language="python" text={degreeCode}/>
-      <ChartImg src={byDegree} />
-      <DefaultDiv>  
-        Most respondents have at least a bachelor's degree, and the majority hold a doctoral degree.
-      </DefaultDiv>
+      <NumberTitle style={{ paddingTop: 20 }}>
+        3. Which language do you most prefer?
+      </NumberTitle>
+      <CodeBlock language="R" text={languageCode} />
+      <ChartImg style={{ width: 400, height: 400 }} src={languagePref} />
 
-      <NumberTitle>5. Respondents' major.</NumberTitle>
-      <CodeBlock language="python" text={majorCode}/>
-      <MajorImg src={byMajor} />
-      <DefaultDiv>
-        Computer science is the highest at 33%, followed by mathematics and statistics, engineering, physics, and so on.
-        Over 90% of respondents majored in STEM (Science, Technology, Engineering, and Mathematics) fields.
-      </DefaultDiv>
+      <NumberTitle style={{ paddingTop: 20 }}>
+        4. Which ML library have you used?
+      </NumberTitle>
+      <CodeBlock language="R" text={mllibraryCode} />
+      <ChartImg style={{ width: 400, height: 400 }} src={mllibraryPref} />
 
-      <NumberTitle>6. Number of programming experience of respondents.</NumberTitle>
-      <CodeBlock language="python" text={jobCode}/>
-      <ExperienceImg src={byExperience} />
-      <DefaultDiv>
-        Most respondents have less than 5 years of programming experience, which are referred to as junior or mid-level programmers.
-        It is also notable that significant number of respondents do not engage in programming at all.
-      </DefaultDiv>
+      <NumberTitle style={{ paddingTop: 20 }}>
+        5. Which visualization tool do you most prefer?
+      </NumberTitle>
+      <CodeBlock language="R" text={vizCode} />
+      <ChartImg style={{ width: 400, height: 400 }} src={vizPref} />
 
-      <NumberTitle>7. MLTool that data scientists want to learn next year</NumberTitle>
-      <CodeBlock language="python" text={MLToolCode}/>
-      <ExperienceImg src={nextYearTool} />
-      <DefaultDiv>
-        Tensorflow ranked at the top that data scientists want to learn next year, followed by two dominant languages, python and R.
-        Tools to store and analysis such as Spark, Hadoop, Hive are also ranked highly.
-      </DefaultDiv>
+      <NumberTitle style={{ paddingTop: 20 }}>
+        6. Which ML service have you used?
+      </NumberTitle>
+      <CodeBlock language="R" text={mlserviceCode} />
+      <ChartImg style={{ width: 400, height: 400 }} src={mlservicePref} />
 
-      <NumberTitle>8. Top 20 median salary of data scientists around the world</NumberTitle>
-      <CodeBlock language="python" text={MedianSalaryCode}/>
-      <SalaryImg src={medianSalary} />
-      <DefaultDiv>
-        The United States is ranked at the top with a median salary of $108,000, which is more than twice the amount of Italy, which is ranked 20th. 
-        Primarily, developed countries in North America and Europe are ranked at the top. In Asia, Japan and Singapore are included.
-      </DefaultDiv>
+      <NumberTitle style={{ paddingTop: 20 }}>
+        7. Which relational database do you most prefer?
+      </NumberTitle>
+      <CodeBlock language="R" text={rdbCode} />
+      <ChartImg style={{ width: 400, height: 400 }} src={rdbPref} />
 
-      <NumberTitle>9. Gender-based salary distribution of data scientists in South Korea</NumberTitle>
-      <CodeBlock language="python" text={SalaryByGenderCode}/>
-      <ChartImg src={salaryByGender} />
-      <DefaultDiv>
-        The salary for men ranges between $22,000 and $60,000 USD, while for women, it ranges between $0 and $25,000 USD.
-        This indicates a significant salary difference based on gender.
-      </DefaultDiv>
+      <NumberTitle style={{ paddingTop: 20 }}>
+        8. Which big data tool have you used?
+      </NumberTitle>
+      <CodeBlock language="R" text={bigdataCode} />
+      <ChartImg style={{ width: 400, height: 400 }} src={bigdataPref} />
     </Container>
-  )
+  );
 }
 
 export const ChartImg = styled.img`
@@ -129,7 +190,7 @@ export const ChartImg = styled.img`
   resizeMode: 'cover'
   padding-top: 5px;
   padding-bottom: 5px;
-`
+`;
 
 export const MajorImg = styled.img`
   width: 1000px;
@@ -137,7 +198,7 @@ export const MajorImg = styled.img`
   resizeMode: 'cover'
   padding-top: 5px;
   padding-bottom: 5px;
-`
+`;
 
 export const ExperienceImg = styled.img`
   width: 1000px;
@@ -145,7 +206,7 @@ export const ExperienceImg = styled.img`
   resizeMode: 'cover'
   padding-top: 5px;
   padding-bottom: 5px;
-`
+`;
 
 export const SalaryImg = styled.img`
   width: 500px;
@@ -153,56 +214,231 @@ export const SalaryImg = styled.img`
   resizeMode: 'cover'
   padding-top: 5px;
   padding-bottom: 5px;
-`
+`;
 
-const genderCode = `seaborn.countplot(y='GenderSelect', data=mcq)`
-const countryCode = `con_df = pandas.DataFrame(mcq['Country'].value_counts())
-con_df['Country'] = con_df.index
-con_df.columns = ['Responds', 'Countries']
-con_df.head(20)`
-const ageCode = `seaborn.displot(mcq[mcq['Age'] > 0]['Age'])`
-const degreeCode = `seaborn.countplot(y='FormalEducation', data=mcq)`
-const majorCode = `mcq_major_count = pandas.DataFrame(mcq['MajorSelect'].value_counts())
-mcq_major_percent = pandas.DataFrame(mcq['MajorSelect'].value_counts(normalize=True))
-mcq_major_df = mcq_major_count.merge(mcq_major_percent, left_index=True, right_index=True)
-mcq_major_df.columns = ['Responds', 'Ratio']
+const exploration = `library(dplyr)
+library(ggplot2)
+library(tidyr)
 
-pyplot.figure(figsize=(6,8))
-seaborn.countplot(y='MajorSelect', data=mcq)`
-const jobCode = `mcq_es_count = pandas.DataFrame(mcq['EmploymentStatus'].value_counts())
-mcq_es_percent = pandas.DataFrame(mcq['EmploymentStatus'].value_counts(normalize=True))
-mcq_es_df = mcq_es_count.merge(mcq_es_percent, left_index=True, right_index=True)
-mcq_es_df.columns = ['Responds', 'Ratio']
+MAIN_COLOR <- "#4E79A7"
+ACCENT_COLOR <- "#3399FF"
 
-seaborn.countplot(y='Tenure', data=mcq)`
+response <- read.csv('multipleChoiceResponses.csv', skip = 1)
+head(response)`;
 
-const MLToolCode = `mcq_ml_tool_count = pandas.DataFrame(
-  mcq['MLToolNextYearSelect'].value_counts())
-mcq_ml_tool_percent = pandas.DataFrame(
-  mcq['MLToolNextYearSelect'].value_counts(normalize=True))
-mcq_ml_tool_df = mcq_ml_tool_count.merge(
-  mcq_ml_tool_percent,
-  left_index=True,
-  right_index=True
-).head(20)
+const genderCode = `response$Gender <- as.factor(response$Gender)
 
-data = mcq['MLToolNextYearSelect'].value_counts().head(20)
-seaborn.barplot(y=data.index, x=data)`
+ggplot(response, aes(x = Gender)) +
+    geom_bar(aes(y = (..count..)/sum(..count..)), fill = MAIN_COLOR) +
+    coord_flip() +
+    scale_y_continuous(labels = scales::percent) +
+    theme_minimal() +
+    labs(
+        title = "Gender Distribution (%)",
+        x = "Gender",
+        y = "Percentage"
+    )`;
+const countryCode = `top_10_country <- response |>
+    group_by(Country) |>
+    summarize(
+        count = n()
+    ) |>
+    arrange(desc(count)) |>
+    slice_head(n = 11)
 
-const MedianSalaryCode = `mcq['CompensationAmount'] = mcq['CompensationAmount'].str.replace(',', '')
-mcq['CompensationAmount'] = mcq['CompensationAmount'].str.replace('-', '')
+top_10_country <- top_10_country[-4, ]
+top_10_country$Country[1] = "US"
+top_10_country$Country[7] = "UK"
 
-rates = pandas.read_csv('conversionRates.csv')
-rates.drop('Unnamed: 0', axis=1, inplace=True)
+ggplot(top_10_country, aes(x = reorder(Country, -count), y = count)) +
+    geom_col(fill = MAIN_COLOR) +
+    labs(
+        title = "Country distribution of Respondents",
+        x = "Country",
+        y = "Count"
+    ) `;
+const ageCode = `response$Age <- as.factor(response$Age)
+levels(response$Age)
 
-salary = mcq[['CompensationAmount', 'CompensationCurrency', 'GenderSelect', 'Country', 'CurrentJobTitleSelect']].dropna()
+ggplot(response, aes(x = Age)) +
+    geom_bar(fill = MAIN_COLOR) +
+    theme_minimal() +
+    labs(
+        title = "Age Group Distribution",
+        x = "Age Group",
+        y = "Count"
+    )`;
+const degreeCode = `response$Degree <- as.factor(response$Degree)
+levels(response$Degree)[levels(response$Degree) == "Some college/university study without earning a bachelor’s degree"] <- "College/Univ without a degree"
 
-salary = salary.merge(rates, left_on='CompensationCurrency', right_on='originCountry', how='left')
-salary['Salary'] = pandas.to_numeric(
-    salary['CompensationAmount']
-) *  salary['exchangeRate']
+degree_perc <- response |>
+    count(Degree) |>
+    mutate(perc = n / sum(n) * 100) |>
+    arrange(desc(n))
 
-sal_coun = salary.groupby('Country')['Salary'].median().sort_values(ascending=False)[:30].to_frame()`
+degree_perc <- degree_perc[-6,]
 
-const SalaryByGenderCode = `salary_korea = salary.loc[(salary['Country'] == 'South Korea')]
-seaborn.boxplot(y='GenderSelect', x='Salary', data=salary_korea)`
+ggplot(degree_perc, aes(x = reorder(Degree, perc), y = perc)) +
+  geom_col(fill = MAIN_COLOR) +
+  geom_text(aes(label = paste0(round(perc, 1), "%")),
+            hjust = -0.1, size = 3.5) +
+  coord_flip() +
+  theme_minimal() +
+  labs(
+    title = "Degree Distribution (%)",
+    x = "Degree",
+    y = "Percentage"
+  )`;
+
+const majorCode = `response$Major <- as.factor(response$Major)
+
+major_count <- response |>
+    count(Major) |>
+    mutate(perc = n / sum(n) * 100) |>
+    arrange(desc(perc)) |>
+    slice_head(n = 5)
+
+ggplot(major_count, aes(x = "", y = perc, fill = Major)) +
+  geom_col(width = 1, color = "white") +
+  coord_polar(theta = "y") +
+  geom_text(aes(label = paste0(round(perc, 1), "%")),
+            position = position_stack(vjust = 0.5),
+            color = "white", size = 3) +
+  theme_void() +
+  labs(title = "Major Distribution (%)")`;
+
+const longerAndGraph = `longer_data <- function(df, name) {
+    df |> pivot_longer(
+        cols = everything(),
+        names_to = name,
+        values_to = "Selected"
+    ) |>
+    filter(Selected != "")
+}
+
+percentage_bargraph <- function(df, col, title, xlab) {
+    graph <- df |> 
+        count({{ col }}) |>
+        mutate(perc = round(n / sum(n) * 100, 1)) |>
+        arrange(desc(perc)) |>
+        ggplot(aes(x = reorder({{ col }}, perc), y = perc)) +
+        geom_col(fill = ACCENT_COLOR) +
+        geom_text(aes(label = paste0(perc, "%")),
+              hjust = 0.2, size = 3.5) +
+        coord_flip() +
+        theme_minimal() + 
+        labs(
+            title = title,
+            x = xlab,
+            y = "Percentage"
+        )
+
+    attr(graph, "width") <- 40
+    attr(graph, "height") <- 6
+    
+    return(graph)
+}`;
+
+const kernelCode = `response_kernel <- response[, 46:56]
+colnames(response_kernel) <- c("Kaggle kernels", "Google Colab", "Azure Notebook", "Domino Datalab", "GCP Datalab",
+                               "Parperspace", "Folydhub", "Crestle", "JupyterHub Binder", "None", "Other")
+
+kernel_long <- longer_data(response_kernel, "Kernel")
+
+kernel_long <- kernel_long |>
+    filter(Selected != "None")
+
+kernel_long$Selected <- as.factor(kernel_long$Selected)
+levels(kernel_long$Selected)
+
+percentage_bargraph(kernel_long, Selected, "Kernel Preference (%)", "Kernel Type")`;
+
+const cloudCode = `response_cloud <- response[, 58:64]
+
+colnames(response_cloud) <- c("GCP", "AWS", "Azure", "IBM Cloud", "Alibaba Cloud", "None", "Other")
+
+cloud_long <- longer_data(response_cloud, "Cloud")
+
+cloud_long$Selected <- as.factor(cloud_long$Selected)
+levels(cloud_long$Selected)
+
+percentage_bargraph(cloud_long, Selected, "Cloud Preference (%)", "Cloud Type")`;
+
+const languageCode = `response_language <- response[, 66:83]
+
+colnames(response_language) <- c("Python", "R", "SQL", "Bash", "Java", "Javascript",
+                                 "VBA", "C", "Matkab", "Scala", "Julia", "Go", ".NET", 
+                                 "PHP", "Ruby", "STATA", "None", "Other")
+
+language_long <- longer_data(response_language, "Language")
+
+language_long$Selected <- as.factor(language_long$Selected)
+levels(language_long$Selected)
+
+percentage_bargraph(language_long, Selected, "Language Preference (%)", "Language")`;
+
+const mllibraryCode = `response_ml_framework <- response[, 89:107]
+colnames(response_ml_framework) <- c("Scikit Learn", "TensorFlow", "Keras", "Pytorch", "Spark MLlib", "H20",
+                                     "H20", "Fastai", "Mxnet", "Caret", "Xgboost", "mlr", "Prophet", 
+                                     "randomForest", "lightgbm", "catboost", "CNTK", "Caffe", "None")
+
+ml_framework_long <- longer_data(response_ml_framework, "ML Framework")
+
+ml_framework_long$Selected <- as.factor(ml_framework_long$Selected)
+levels(ml_framework_long$Selected)
+
+percentage_bargraph(ml_framework_long, Selected, "ML Library Preference (%)", "Language")`;
+
+const vizCode = `response_visualize <- response[, 111: 122]
+colnames(response_visualize) <- c("ggplot2", "Matplotlib", "Altair", "Shiny", "D3", "Plotly",
+                                  "Bokeh", "Seaborn", "Geoplotlib", "Lattice", "None", "Other")
+
+visualize_long <- longer_data(response_visualize, "Viz tool")
+
+visualize_long$Selected <- as.factor(visualize_long$Selected)
+levels(visualize_long$Selected)
+
+percentage_bargraph(visualize_long, Selected, "Viz Tool Preference (%)", "Viz tool")`;
+
+const mlserviceCode = `response_ml_service <- response[, 152: 192]
+
+colnames(response_ml_service) <- c("AWS Transcribe", "GCP STT", "AWS Rekognition", "GCP Vision", "AWS Comprehend", "GCP NLP",
+                                   "AWS Translate", "GCP Translation", "AWS Lex", "Google Dialogflow", "AWS Rekognition Video", "GCP Video intelligence", 
+                                   "GCP AutoML", "AWS SageMaker", "GCP ML Engine", "DataRobot", "H20 Driverless AI", "Domino Datalab", "SAS",
+                                   "Dataiku", "RapidMiner", "Instabase", "Algorithmia", "Dataversity", "Cloudera",
+                                   "Azure ML Studio", "Azure ML workbench", "Azure Cortana intelligence", "Azure Bing Speech",
+                                   "Azure Speaker Rekognition", "Azure Vision", "Azure Face", "Azure Video", "IBM Studio",
+                                   "IBM Knowledge Catalog", "IBM Assistant", "IBM Discovery", "IBM STT", "IBM Viz Rekognition", "IBM ML", "Azure Cognitive")
+
+ml_service_long <- longer_data(response_ml_service, "ML Service")
+
+ml_service_long$Selected <- as.factor(ml_service_long$Selected)
+levels(ml_service_long$Selected)
+
+percentage_bargraph(ml_service_long, Selected, "ML Service Preference (%)", "ML Service")`;
+
+const rdbCode = `response_RDB <- response[, 196: 221]
+colnames(response_RDB) <- c("AWS RDB", "AWS Aurora", "GCP SQL", "GCP Sapnner", "AWS DynamoDB", "GCP Datastore",
+                            "GCP Bigtable", "AWS SimpleDB", "MS SQL Server", "MySQL", "PostgreSQL", "SQLite", 
+                            "Oracle", "Ingres", "MS Access", "NexusDB", "SAP IQ", "Googld Fusion", "Azure MySQL",
+                            "Cosmos DB", "Azure SQL", "Azure PostgreSQL", "IBM compose", "IBM MySQL", "IBM PostgreSQL", "IBM DB2")
+
+RDB_long <- longer_data(response_RDB, "RDB")
+
+RDB_long$Selected <- as.factor(RDB_long$Selected)
+levels(RDB_long$Selected)
+
+percentage_bargraph(RDB_long, Selected, "RDB Preference (%)", "RDB")`;
+
+const bigdataCode = `response_bigdata <- response[, 225: 247]
+colnames(response_bigdata) <- c("AWS MapReduce", "AWS Batch", "GCP Dataproc", "GCP Dataflow", "GCP Dataprep", "AWS Kinesis",
+                                "GCP Pub Sub", "AWS Athena", "AWS Redshift", "GCP BigQuery", "Teradata", "MS Analysis",
+                                "Oracle Exadata", "Oracle Warehouse Builder", "SAP IQ", "Snowflake", "Databricks", "Azure SQL Data Warehouse",
+                                "Azure HDInsight", "Azure Stream Analytics", "IBM Infosphere DataStorage", "IBM Cloud Analytics", "IBM Streaming Analytics")
+
+bigdata_long <- longer_data(response_bigdata, "big data")
+
+bigdata_long$Selected <- as.factor(bigdata_long$Selected)
+levels(bigdata_long$Selected)
+
+percentage_bargraph(bigdata_long, Selected, "Big data tool Preference (%)", "Big data tool")`;

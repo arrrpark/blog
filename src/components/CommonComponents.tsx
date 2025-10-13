@@ -1,9 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
-  padding: 30px;
-  padding-left: 330px;
-`
+  padding-top: 70px;
+  padding-left: 400px;
+  padding-right: 100px;
+  padding-bottom: 100px;
+`;
 
 export const Menu = styled.div`
   height: calc(100vh);
@@ -30,8 +32,7 @@ export const BigTitle = styled.div`
 export const DefaultDiv = styled.div`
   font-size: 20px;
   color: #000000;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 30px;
   line-height: 120%;
 `;
 
@@ -40,20 +41,21 @@ export const SemiTitle = styled.div`
   color: #708090;
   font-weight: bold;
   padding-top: 30px;
-`
+  padding-bottom: 10px;
+`;
 
 export const NumberTitle = styled.div`
   font-size: 22px;
-  color: #544C4A;
+  color: #544c4a;
   font-weight: 600;
   padding-top: 15px;
   padding-bottom: 15px;
-`
+`;
 
 export const MenuDiv = styled.div`
   font-size: 18px;
-  color: #3E424B;
+  color: #3e424b;
   padding-left: 20px;
-  padding-top: 20px;
+  padding-top: 10px;
   line-height: 150%;
 `;
