@@ -24,14 +24,16 @@ import {
   rdbPref,
   vizPref,
   kernelPref,
+  whatData,
+  whereData,
 } from '../images/survey';
 
 export default function Survey() {
   return (
     <Container>
       <BigTitle>
-        Anaylsis & data visualization on programmers in the field of data
-        science
+        Analysis & Data Visualization on Programmers in the Field of Data
+        Science
       </BigTitle>
       <DefaultDiv>
         As a software engineer transitioning toward Data and AI, I wanted to
@@ -62,7 +64,7 @@ export default function Survey() {
         </a>
       </div>
       <MenuDiv>
-        The Collected data has following characteristics.
+        The collected dataset has the following characteristics.
         <div>
           - The survey period was from August 7th to August 25th in 2025.
         </div>
@@ -140,12 +142,6 @@ export default function Survey() {
       <ChartImg style={{ width: 400, height: 400 }} src={cloudPref} />
 
       <NumberTitle style={{ paddingTop: 20 }}>
-        2. Which cloud platform do you use most?
-      </NumberTitle>
-      <CodeBlock language="R" text={kernelCode} />
-      <ChartImg style={{ width: 400, height: 400 }} src={cloudPref} />
-
-      <NumberTitle style={{ paddingTop: 20 }}>
         3. Which language do you most prefer?
       </NumberTitle>
       <CodeBlock language="R" text={languageCode} />
@@ -180,6 +176,37 @@ export default function Survey() {
       </NumberTitle>
       <CodeBlock language="R" text={bigdataCode} />
       <ChartImg style={{ width: 400, height: 400 }} src={bigdataPref} />
+
+      <SemiTitle style={{ paddingTop: 40 }}>Data source Analysis</SemiTitle>
+      <NumberTitle style={{ paddingTop: 20 }}>
+        1. Which kind of data do you most unteract with?
+      </NumberTitle>
+      <CodeBlock language="R" text={whatDataCode} />
+      <ChartImg style={{ width: 400, height: 400 }} src={whatData} />
+
+      <NumberTitle style={{ paddingTop: 20 }}>
+        2. From where do you get your data?
+      </NumberTitle>
+      <CodeBlock language="R" text={whereDataCode} />
+      <ChartImg style={{ width: 400, height: 400 }} src={whereData} />
+
+      <SemiTitle style={{ paddingTop: 40 }}>Summary</SemiTitle>
+      <DefaultDiv style={{ paddingTop: 0 }}>
+        The Data Science field is heavily concentrated in the United States and
+        India, with most other participants coming from developed countries.
+        Most respondents are aged between 20 and 40, but there is still a
+        notable share of those over 40. Around 90% of respondents have a STEM
+        background and over 80% are male. More than 90% hold at least a
+        bachelor’s degree, suggesting that the “non-technical entry” narrative
+        may be overstated.
+        <br />
+        <br />
+        Python is the dominant language, followed by R and SQL. Machine learning
+        frameworks and visualization tools are broadly adopted, while
+        open-source databases such as MySQL and PostgreSQL remain the most
+        widely used. Very few respondents collect their own data — most rely on
+        publicly available or pre-processed datasets.
+      </DefaultDiv>
     </Container>
   );
 }
@@ -315,7 +342,8 @@ const longerAndGraph = `longer_data <- function(df, name) {
     ) |>
     filter(Selected != "")
 }
-
+    
+# Helper function to create horizontal percentage bar charts
 percentage_bargraph <- function(df, col, title, xlab) {
     graph <- df |> 
         count({{ col }}) |>
@@ -442,3 +470,25 @@ bigdata_long$Selected <- as.factor(bigdata_long$Selected)
 levels(bigdata_long$Selected)
 
 percentage_bargraph(bigdata_long, Selected, "Big data tool Preference (%)", "Big data tool")`;
+
+const whatDataCode = `response_what_data <- response[, 251: 262]
+colnames(response_what_data) <- c("Audio", "Categorical", "Genetic", "Goespatial", "Image", "Numerical",
+                                  "Sensor", "Tabular", "Text", "Time series", "Video", "Other")
+
+what_data_long <- longer_data(response_what_data, "Data Type")
+
+what_data_long$Selected <- as.factor(what_data_long$Selected)
+levels(what_data_long$Selected)
+
+percentage_bargraph(what_data_long, Selected, "What data do you interect with (%)", "Data Type")`;
+
+const whereDataCode = `response_where_data <- response[, 266: 276]
+colnames(response_where_data) <- c("Governement websites", "Univ research websites", "Non profit Research websites", "Kaggle", "Scraping",
+                                   "Public data from private companies", "Google Search", "Google Dataset", "Github", "No public data", "Other")
+
+where_data_long <- longer_data(response_where_data, "Where")
+
+where_data_long$Selected <- as.factor(where_data_long$Selected)
+levels(where_data_long$Selected)
+
+percentage_bargraph(where_data_long, Selected, "Where do you get data from (%)", "Where")`;

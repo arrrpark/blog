@@ -12,6 +12,8 @@ import mllibraryPref from './mllibraryPref.png';
 import mlservicePref from './mlservicePref.png';
 import rdbPref from './rdbPref.png';
 import vizPref from './vizPref.png';
+import whatData from './whatData.png';
+import whereData from './whereData.png';
 
 export {
   surveyExploration,
@@ -28,4 +30,6 @@ export {
   mlservicePref,
   rdbPref,
   vizPref,
+  whatData,
+  whereData,
 };

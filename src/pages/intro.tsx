@@ -26,9 +26,9 @@ export default function Intro() {
       </DefaultDiv>
       <DefaultDiv>
         🌲 These projects use data from Kaggle and open-source. Analysis and
-        visualization are done via python and basic libraries such as Numpy,
+        visualization are done via python and basic libraries such as R, Numpy,
         Pandas, Scipy, Matplotlib and Seaborn. These projects are a record of my
-        work based on various data science courses such as Udemy and Coursera.
+        work based on various data science courses.
       </DefaultDiv>
       <DefaultDiv>
         🛠 This website is made using React, Typescript and github-pages. 100%
