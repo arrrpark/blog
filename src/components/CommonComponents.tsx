@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   padding-top: 70px;
-  padding-left: 400px;
-  padding-right: 100px;
+  padding-left: 300px;
+  padding-right: 300px;
   padding-bottom: 100px;
 `;
 

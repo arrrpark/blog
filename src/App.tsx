@@ -11,9 +11,9 @@ import styled, { createGlobalStyle } from 'styled-components';
 function App() {
   return (
     <>
-      <GlobalStyle />
+      {/* <GlobalStyle /> */}
       <Container>
-        <Menu>
+        {/* <Menu>
           <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>
             <MenuTitle>Data science projects</MenuTitle>
           </Link>
@@ -44,7 +44,7 @@ function App() {
           >
             <SemiTitle>Ecommerce data analysis</SemiTitle>
           </Link>
-        </Menu>
+        </Menu> */}
 
         <Route exact path="/" component={Intro} />
         <Route exact path="/franchise" component={Franchise} />
