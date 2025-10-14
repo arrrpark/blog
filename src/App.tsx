@@ -12,8 +12,8 @@ function App() {
   return (
     <>
       {/* <GlobalStyle /> */}
-      <Container>
-        {/* <Menu>
+      {/* <Container> */}
+      {/* <Menu>
           <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>
             <MenuTitle>Data science projects</MenuTitle>
           </Link>
@@ -46,13 +46,13 @@ function App() {
           </Link>
         </Menu> */}
 
-        <Route exact path="/" component={Intro} />
-        <Route exact path="/franchise" component={Franchise} />
-        <Route exact path="/survey" component={Survey} />
-        <Route exact path="/bike" component={Bike} />
-        <Route exact path="/climate" component={ClimageChange} />
-        <Route exact path="/ecommerce" component={ECommerce} />
-      </Container>
+      <Route exact path="/" component={Intro} />
+      <Route exact path="/franchise" component={Franchise} />
+      <Route exact path="/survey" component={Survey} />
+      <Route exact path="/bike" component={Bike} />
+      <Route exact path="/climate" component={ClimageChange} />
+      <Route exact path="/ecommerce" component={ECommerce} />
+      {/* </Container> */}
     </>
   );
 }

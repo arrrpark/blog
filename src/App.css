@@ -1,3 +1,9 @@
+:root {
+  --primary-app-color: #02203c;
+  --secondary-app-color: #001528;
+  --standout-color: #fffb00;
+  --work-background-color: #d3d3d3;
+}
 .container {
   display: flex;
   height: 100%;
@@ -13,4 +19,99 @@
   background-color: #333;
   color: #fff;
   margin-left: 20px;
+}
+
+.introsection {
+  display: block;
+  width: 100vw;
+  position: relative;
+  float: none;
+  background: linear-gradient(
+    -90deg,
+    var(--primary-app-color),
+    var(--secondary-app-color)
+  );
+  clip-path: polygon(0 0, 100% 0, 100% 84%, 75% 100%, 25% 100%, 0 84%);
+}
+
+.Im-text-section {
+  padding-top: 50px;
+  text-align: center;
+}
+.Im-text {
+  font-family: 'Ubuntu';
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.name-Im-text {
+  color: var(--standout-color);
+  font-size: 28px;
+}
+.Im-text-enthusiastic {
+  font-family: sans-serif;
+  color: #fff;
+  font-size: 2.5rem;
+}
+.Im-text-subheading {
+  font-family: 'Open sans';
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+.about-me-section {
+  display: block;
+  width: 100vw;
+}
+
+.about-me-text {
+  font-family: 'ubuntu';
+  font-weight: 800;
+  font-size: 3.5rem;
+  text-decoration: underline;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.work-sample-section {
+  display: block;
+  width: 100vw;
+  padding-top: 50px;
+  padding-bottom: 100px;
+  background: var(--work-background-color);
+}
+
+.work-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+
+.work-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem 2rem;
+  width: 250px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* ✅ 2개씩 */
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+.project-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  transition: all 0.25s ease;
 }

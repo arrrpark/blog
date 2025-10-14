@@ -1,101 +1,164 @@
-
-import styled from "styled-components";
-import { Container, BigTitle, DefaultDiv, MenuDiv, SemiTitle, NumberTitle } from "../components/CommonComponents";
+import styled from 'styled-components';
+import {
+  Container,
+  BigTitle,
+  DefaultDiv,
+  MenuDiv,
+  SemiTitle,
+  NumberTitle,
+} from '../components/CommonComponents';
 import { CodeBlock } from '@atlaskit/code';
-import originalCSV from '../images/originalCSV.png';
-import extractedCSV from '../images/extractedCSV.png';
-import franchiseBarByLocation from '../images/franchiseBarByLocation.png';
-import totalFranchiseBar from '../images/totalFranchiseBar.png';
-import franchiseScatter from '../images/franchiseScatter.png';
-import franchiseMap from '../images/franchiseMap.gif';
+import {
+  originalCSV,
+  extractedCSV,
+  franchiseBarByLocation,
+  totalFranchiseBar,
+  franchiseScatter,
+  franchiseMap,
+} from '../images/franchise';
 
 export default function Franchise() {
-  return (<Container>
-  <BigTitle>Data visualization of Starbucks' and Dunkin's distribution on map</BigTitle>
-  <DefaultDiv>
-   In Korea, there is a widespread perception that Dunkin' Donuts and Starbucks are located close to each other. 
-   To investigate whether this perception is accurate, I plan to use public data provided by the Korean government, preprocess andvisualize it on a map, 
-   and examine the proximity of this perception.
-  </DefaultDiv>
-  <SemiTitle>
-    This project uses data from Korean government.
-  </SemiTitle>
-  <div>
-    <a target="_blank" href="https://www.data.go.kr/dataset/15012005/fileData.do">
-        https://www.data.go.kr/dataset/15012005/fileData.do
-    </a>
-  </div>
-  <MenuDiv>
-    <div>It consists of the following 1 CSV file.</div>
-    <div>- store.csv : The store information including store name, category, location(latitute, longitude), etc.</div>
-    <div>- The contents are written in Korean, so it is necessary to translate it to English.</div>
-  </MenuDiv>
-  <SemiTitle>
-    Used tools & Algorithms
-  </SemiTitle>
-  <MenuDiv>
-    - Pandas, Numpy, Matplotlib, and Seaborn.
-  </MenuDiv>
+  return (
+    <Container>
+      <BigTitle>
+        Data visualization of Starbucks' and Dunkin's distribution on map
+      </BigTitle>
+      <DefaultDiv>
+        In Korea, there is a widespread perception that Dunkin' Donuts and
+        Starbucks are located close to each other. To investigate whether this
+        perception is accurate, I plan to use public data provided by the Korean
+        government, preprocess andvisualize it on a map, and examine the
+        proximity of this perception.
+      </DefaultDiv>
+      <SemiTitle>This project uses data from Korean government.</SemiTitle>
+      <div>
+        <a
+          target="_blank"
+          href="https://www.data.go.kr/dataset/15012005/fileData.do"
+        >
+          https://www.data.go.kr/dataset/15012005/fileData.do
+        </a>
+      </div>
+      <MenuDiv>
+        <div>It consists of the following 1 CSV file.</div>
+        <div>
+          - store.csv : The store information including store name, category,
+          location(latitute, longitude), etc.
+        </div>
+        <div>
+          - The contents are written in Korean, so it is necessary to translate
+          it to English.
+        </div>
+      </MenuDiv>
+      <SemiTitle>Used tools & Algorithms</SemiTitle>
+      <MenuDiv>- Pandas, Numpy, Matplotlib, and Seaborn.</MenuDiv>
 
-  <SemiTitle>
-    Preprocessing the data.
-  </SemiTitle>
-  <NumberTitle> 1. Identify the CSV's data shape.</NumberTitle>
-  <CodeBlock language="python" text={readingCode}/>
-  <ChartImg src={originalCSV} style={{width: 500, height: 800}}/>
-  <DefaultDiv>
-    <div>- The public data contains too much data for anlaysis. This occupies more than 170MB.</div>
-    <div>- So extracting only necessary part from the CSV data is essential.</div>
-    <div>- Since the all columns are in Korean, these should be translated to English.</div>
-  </DefaultDiv>
+      <SemiTitle>Preprocessing the data.</SemiTitle>
+      <NumberTitle> 1. Identify the CSV's data shape.</NumberTitle>
+      <CodeBlock language="python" text={readingCode} />
+      <ChartImg src={originalCSV} style={{ width: 500, height: 800 }} />
+      <DefaultDiv>
+        <div>
+          - The public data contains too much data for anlaysis. This occupies
+          more than 170MB.
+        </div>
+        <div>
+          - So extracting only necessary part from the CSV data is essential.
+        </div>
+        <div>
+          - Since the all columns are in Korean, these should be translated to
+          English.
+        </div>
+      </DefaultDiv>
 
-  <NumberTitle> 2. Extract only necessary data from the CSV and translate columns to English.</NumberTitle>
-  <CodeBlock language="python" text={extractingCode}/>
-  <ChartImg src={extractedCSV} style={{width: 500, height: 200}}/>
-  <DefaultDiv>
-    <div>- Only name, city, location, longtitude and latitute data is extracted.</div>
-    <div>- The size of data is reduced from 170MB to 22MB.</div>
-    <div>- New data is saved as a new CSV file.</div>
-  </DefaultDiv>
+      <NumberTitle>
+        {' '}
+        2. Extract only necessary data from the CSV and translate columns to
+        English.
+      </NumberTitle>
+      <CodeBlock language="python" text={extractingCode} />
+      <ChartImg src={extractedCSV} style={{ width: 500, height: 200 }} />
+      <DefaultDiv>
+        <div>
+          - Only name, city, location, longtitude and latitute data is
+          extracted.
+        </div>
+        <div>- The size of data is reduced from 170MB to 22MB.</div>
+        <div>- New data is saved as a new CSV file.</div>
+      </DefaultDiv>
 
-  <NumberTitle> 3. Open the newly created CSV and make another DataFrame for data visualization</NumberTitle>
-  <CodeBlock language="python" text={franchiseCode}/>
-  <DefaultDiv>
-    <div>- Lower the name, since the data is not standarized. Then, extract only the name contains specific strings.</div>
-    <div>- Made new column 'franchise' to distinghish Baskin robbins and Dunkin donuts.</div>
-    <div>- Translate Korean location name to English.</div>
-  </DefaultDiv>
+      <NumberTitle>
+        {' '}
+        3. Open the newly created CSV and make another DataFrame for data
+        visualization
+      </NumberTitle>
+      <CodeBlock language="python" text={franchiseCode} />
+      <DefaultDiv>
+        <div>
+          - Lower the name, since the data is not standarized. Then, extract
+          only the name contains specific strings.
+        </div>
+        <div>
+          - Made new column 'franchise' to distinghish Baskin robbins and Dunkin
+          donuts.
+        </div>
+        <div>- Translate Korean location name to English.</div>
+      </DefaultDiv>
 
-  <SemiTitle>
-    Visualize the data.
-  </SemiTitle>
-  
-  <NumberTitle> 1. Count the total count and make bar plots of franchise.</NumberTitle>
-  <CodeBlock language="python" text={barplotCode}/>
-  <ChartImg src={totalFranchiseBar} style={{width: 500, height: 400}}/>
-  <ChartImg src={franchiseBarByLocation} style={{width: 900, height: 600}}/>
-  <DefaultDiv>
-    <div>- There all total of 466 Baskinrobbins and 191 Donkin donuts in Seoul.</div>
-    <div>- When we see the total counts by location, low income area such as Gangdong, Gyemchoen and Dobong have very few Dunkin donuts.</div>
-    <div>- The number of shops is very high at Gangnam, which is area of that has the highest income in Korea.</div>
-  </DefaultDiv>
+      <SemiTitle>Visualize the data.</SemiTitle>
 
-  <NumberTitle> 2. Visualize the franchises' locations on scattor plot.</NumberTitle>
-  <CodeBlock language="python" text={scatterCode}/>
-  <ChartImg src={franchiseScatter} style={{width: 800, height: 400}}/>
-  <DefaultDiv>
-    <div>- When there is a Dunkin donuts, it is highly likely that there are also multiple Baskinrobbins arount it.</div>
-    <div>- The distribution of points resembles the shape of Seoul.</div>
-  </DefaultDiv>
+      <NumberTitle>
+        {' '}
+        1. Count the total count and make bar plots of franchise.
+      </NumberTitle>
+      <CodeBlock language="python" text={barplotCode} />
+      <ChartImg src={totalFranchiseBar} style={{ width: 500, height: 400 }} />
+      <ChartImg
+        src={franchiseBarByLocation}
+        style={{ width: 900, height: 600 }}
+      />
+      <DefaultDiv>
+        <div>
+          - There all total of 466 Baskinrobbins and 191 Donkin donuts in Seoul.
+        </div>
+        <div>
+          - When we see the total counts by location, low income area such as
+          Gangdong, Gyemchoen and Dobong have very few Dunkin donuts.
+        </div>
+        <div>
+          - The number of shops is very high at Gangnam, which is area of that
+          has the highest income in Korea.
+        </div>
+      </DefaultDiv>
 
-  <NumberTitle> 3. Visualize the franchises' locations on map and cluster the markers.</NumberTitle>
-  <CodeBlock language="python" text={mapCode}/>
-  <ChartImg src={franchiseMap} style={{width: 900, height: 600}}/>
-  <DefaultDiv>
-    <div>- Installed folium library to visualize the distribution data on map.</div>
-    <div>- Markers are clustered according to user's zoom.</div>
-  </DefaultDiv>
-</Container>);
+      <NumberTitle>
+        {' '}
+        2. Visualize the franchises' locations on scattor plot.
+      </NumberTitle>
+      <CodeBlock language="python" text={scatterCode} />
+      <ChartImg src={franchiseScatter} style={{ width: 800, height: 400 }} />
+      <DefaultDiv>
+        <div>
+          - When there is a Dunkin donuts, it is highly likely that there are
+          also multiple Baskinrobbins arount it.
+        </div>
+        <div>- The distribution of points resembles the shape of Seoul.</div>
+      </DefaultDiv>
+
+      <NumberTitle>
+        {' '}
+        3. Visualize the franchises' locations on map and cluster the markers.
+      </NumberTitle>
+      <CodeBlock language="python" text={mapCode} />
+      <ChartImg src={franchiseMap} style={{ width: 900, height: 600 }} />
+      <DefaultDiv>
+        <div>
+          - Installed folium library to visualize the distribution data on map.
+        </div>
+        <div>- Markers are clustered according to user's zoom.</div>
+      </DefaultDiv>
+    </Container>
+  );
 }
 
 export const ChartImg = styled.img`
@@ -104,10 +167,10 @@ export const ChartImg = styled.img`
   resizeMode: 'cover'
   padding-top: 5px;
   padding-bottom: 5px;
-`
+`;
 
 const readingCode = `df = pd.read_csv("./store.csv", sep='|')
-df.info()`
+df.info()`;
 
 const extractingCode = `columns = ['상호명', '시도명', '시군구명','경도', '위도']
 df = df[columns].copy()
@@ -116,7 +179,7 @@ df.info()
 
 df_seoul = df[df["city"] == "서울특별시"].copy()
 df_seoul.to_csv("seoul_open_store.csv", index=False)
-df_seoul = pd.read_csv("./seoul_open_store.csv")`
+df_seoul = pd.read_csv("./seoul_open_store.csv")`;
 
 const franchiseCode = `df_seoul = pd.read_csv("./seoul_open_store.csv")
 df_seoul["name_lowered"] = df_seoul["name"].str.lower()
@@ -148,17 +211,17 @@ df_franchise.loc[df_franchise["location"].str.contains("종로구"), "location"]
 df_franchise.loc[df_franchise["location"].str.contains("도봉구"), "location"] = "Dobong"
 df_franchise.loc[df_franchise["location"].str.contains("성동구"), "location"] = "Sungdong"
 df_franchise.loc[df_franchise["location"].str.contains("강북구"), "location"] = "Gangbuk"
-df_franchise.loc[df_franchise["location"].str.contains("금천구"), "location"] = "Gyemcheon"`
+df_franchise.loc[df_franchise["location"].str.contains("금천구"), "location"] = "Gyemcheon"`;
 
 const barplotCode = `df_franchise["franchise"].value_counts().plot.bar()
 sns.countplot(data=df_franchise, x="franchise")
 plt.figure(figsize=(15,4))
 sns.countplot(data=df_franchise, x="location", hue="franchise")
 plt.xticks(rotation=45)
-plt.show()`
+plt.show()`;
 
 const scatterCode = `sns.scatterplot(data=df_franchise, x="longitude", y="latitude", hue="franchise")
-plt.show()`
+plt.show()`;
 
 const mapCode = `import folium
 from folium.plugins import MarkerCluster
@@ -186,4 +249,4 @@ for i in df_franchise.index:
         tooltip=title
     ).add_to(marker_cluster)
     
-m.save("location.html")`
+m.save("location.html")`;
