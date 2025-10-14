@@ -1,16 +1,18 @@
 {
   "files": {
-    "main.css": "/blog/static/css/main.83b41918.css",
-    "main.js": "/blog/static/js/main.f0debb68.js",
+    "main.css": "/blog/static/css/main.0a824b14.css",
+    "main.js": "/blog/static/js/main.b213bc67.js",
     "@atlaskit-internal_refractor-import.js": "/blog/static/js/@atlaskit-internal_refractor-import.4817a263.chunk.js",
     "static/js/787.f587e8d5.chunk.js": "/blog/static/js/787.f587e8d5.chunk.js",
     "static/media/bigramBoth.png": "/blog/static/media/bigramBoth.6ea090916bb62f3d5a0d.png",
     "static/media/wordCloudUni.png": "/blog/static/media/wordCloudUni.99b438f3d2b26022da40.png",
     "static/media/bikeUsage.png": "/blog/static/media/bikeUsage.9bfbe4a350a31107f93c.png",
+    "static/media/transfer2.gif": "/blog/static/media/transfer2.7ad18f0e9c3b2f40f8c0.gif",
     "static/media/probBikes.png": "/blog/static/media/probBikes.e83f80c8e9b8e0c81ab1.png",
     "static/media/franchiseMap.gif": "/blog/static/media/franchiseMap.16cc0af3a14230f6d178.gif",
     "static/media/factorsToCount.png": "/blog/static/media/factorsToCount.e3df6747e6899a0f550a.png",
     "static/media/unigram.png": "/blog/static/media/unigram.c05da279e572a7466067.png",
+    "static/media/transfer1.png": "/blog/static/media/transfer1.52c78a9f867e2bfb9ead.png",
     "static/media/workingHour.png": "/blog/static/media/workingHour.9454cdfe656b53e32701.png",
     "static/media/adjustedWind.png": "/blog/static/media/adjustedWind.4f7f88904df591be2c5c.png",
     "static/media/sentimentAnalysis.png": "/blog/static/media/sentimentAnalysis.f2c84bedbfcabad83eb4.png",
@@ -42,13 +44,13 @@
     "static/media/kernelPref.png": "/blog/static/media/kernelPref.abf5a40b51a816016e0b.png",
     "static/media/cloudPref.png": "/blog/static/media/cloudPref.2f1660b25432348e5f0d.png",
     "index.html": "/blog/index.html",
-    "main.83b41918.css.map": "/blog/static/css/main.83b41918.css.map",
-    "main.f0debb68.js.map": "/blog/static/js/main.f0debb68.js.map",
+    "main.0a824b14.css.map": "/blog/static/css/main.0a824b14.css.map",
+    "main.b213bc67.js.map": "/blog/static/js/main.b213bc67.js.map",
     "@atlaskit-internal_refractor-import.4817a263.chunk.js.map": "/blog/static/js/@atlaskit-internal_refractor-import.4817a263.chunk.js.map",
     "787.f587e8d5.chunk.js.map": "/blog/static/js/787.f587e8d5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.83b41918.css",
-    "static/js/main.f0debb68.js"
+    "static/css/main.0a824b14.css",
+    "static/js/main.b213bc67.js"
   ]
 }
