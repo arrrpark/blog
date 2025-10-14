@@ -1,5 +1,10 @@
 import styled from 'styled-components';
-import { Container, SemiTitle } from '../components/CommonComponents';
+import { Link } from 'react-router-dom';
+import { Container } from '../components/CommonComponents';
+import { byMajor } from '../images/survey';
+import { wordCloudUni } from '../images/climage';
+import { franchiseScatter } from '../images/franchise';
+import { transfer1, transfer2 } from '../images/coreml';
 
 export default function Intro() {
   const projects = [
@@ -41,7 +46,7 @@ export default function Intro() {
       </div>
       <div className="about-me-section">
         <Container style={{ paddingTop: 40 }}>
-          <div className="about-me-text">About Me</div>
+          <div className="section-title">About Me</div>
           <DefaultDiv style={{ paddingTop: 40 }}>
             💻 My name is Seungmyun, a software engineer from South Korea. I'm
             current based in Vancouver, Canada.
@@ -73,35 +78,81 @@ export default function Intro() {
       </div>
       <div className="work-sample-section">
         <Container style={{ paddingTop: 40 }}>
-          <div className="about-me-text">Work Sample</div>
+          <div className="section-title">Work Sample</div>
+          <div className="section-semi-title">CoreML & iOS</div>
           <div className="project-grid">
             <div className="project-card">
-              <img src="bike.png" alt="Cyclistic" />
-              <h3>Cyclistic Bike-Share Analytics</h3>
+              <ChartImg src={transfer1} style={{ width: 320, height: 150 }} />
+              <h3>Data Preparation & transfer learning</h3>
               <p>
-                A comprehensive analysis featuring EDA, SARIMA Forecasting, and
-                Tableau dashboards.
+                This project focuses on data collection and training for
+                transfer learning in computer vision.
               </p>
-              <button>View Project</button>
+              <a
+                href="https://medium.com/@eden.parkdev/%EC%A0%84%EC%9D%B4-%ED%95%99%EC%8A%B5%EC%9D%84-%ED%86%B5%ED%95%9C-%EB%AC%B8%EC%84%9C-%EC%9D%B8%EC%8B%9D-%EB%AA%A8%EB%8D%B8-coreml-%EA%B0%9C%EB%B0%9C%EA%B8%B0-81b20b5e8571"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button>View blog</button>
+              </a>
+            </div>
+            <div className="project-card">
+              <ChartImg src={transfer2} style={{ width: 100, height: 150 }} />
+              <h3>Embedding a model into an iOS app</h3>
+              <p>Integrating and Running the Trained Model for Inference</p>
+              <a
+                href="https://medium.com/@eden.parkdev/%EC%A0%84%EC%9D%B4-%ED%95%99%EC%8A%B5%EC%9C%BC%EB%A1%9C-%EB%A7%8C%EB%93%A0-coreml-%EB%AA%A8%EB%8D%B8-%EB%84%A3%EA%B3%A0-%EC%B9%B4%EB%A9%94%EB%9D%BC%EB%A1%9C-%EC%9D%B8%EC%8B%9D%EC%8B%9C%ED%82%A4%EA%B8%B0-890ac737b476"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button>View blog</button>
+              </a>
+            </div>
+          </div>
+          <div className="section-semi-title">Data science work</div>
+          <div className="project-grid">
+            <div className="project-card">
+              <ChartImg src={byMajor} />
+              <h3>Data Visualization</h3>
+              <p>
+                Insights into Tools, Technologies, and Demographics of Data and
+                Machine Learning Practitioners
+              </p>
+              <Link
+                to="/survey"
+                style={{ color: 'inherit', textDecoration: 'none' }}
+              >
+                <button>View Project</button>
+              </Link>
             </div>
 
             <div className="project-card">
-              <img src="stock.png" alt="Stock" />
-              <h3>Stock Price Prediction Web App</h3>
+              <ChartImg src={franchiseScatter} />
+              <h3>Geospatial visualization</h3>
               <p>
-                Deep dive into LSTM-based stock prediction with Streamlit and
-                technical indicators.
+                Comparative Study of Baskin Robbins and Dunkin’ Donuts Store
+                Presence in Seoul
               </p>
-              <button>View Project</button>
+              <Link
+                to="/franchise"
+                style={{ color: 'inherit', textDecoration: 'none' }}
+              >
+                <button>View Project</button>
+              </Link>
             </div>
             <div className="project-card">
-              <img src="stock.png" alt="Stock" />
-              <h3>Stock Price Prediction Web App</h3>
+              <ChartImg src={wordCloudUni} />
+              <h3>NLP on climate change</h3>
               <p>
-                Deep dive into LSTM-based stock prediction with Streamlit and
-                technical indicators.
+                Deep dive into NLP analysis on public opinion based on
+                twitter/reddit.
               </p>
-              <button>View Project</button>
+              <Link
+                to="/climate"
+                style={{ color: 'inherit', textDecoration: 'none' }}
+              >
+                <button>View Project</button>
+              </Link>
             </div>
           </div>
         </Container>
@@ -115,4 +166,12 @@ const DefaultDiv = styled.div`
   padding-top: 20px;
   color: #000000;
   line-height: 120%;
+`;
+
+const ChartImg = styled.img`
+  width: 300px;
+  height: 150px;
+  resizeMode: 'cover'
+  padding-top: 5px;
+  padding-bottom: 5px;
 `;

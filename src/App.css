@@ -38,6 +38,7 @@
   padding-top: 50px;
   text-align: center;
 }
+
 .Im-text {
   font-family: 'Ubuntu';
   color: #fff;
@@ -49,11 +50,13 @@
   color: var(--standout-color);
   font-size: 28px;
 }
+
 .Im-text-enthusiastic {
   font-family: sans-serif;
   color: #fff;
   font-size: 2.5rem;
 }
+
 .Im-text-subheading {
   font-family: 'Open sans';
   color: #fff;
@@ -65,13 +68,22 @@
   width: 100vw;
 }
 
-.about-me-text {
+.section-title {
   font-family: 'ubuntu';
   font-weight: 800;
   font-size: 3.5rem;
   text-decoration: underline;
   letter-spacing: 2px;
   text-align: center;
+}
+
+.section-semi-title {
+  font-family: 'ubuntu';
+  padding-top: 30px;
+  padding-left: 10px;
+  font-weight: 800;
+  font-size: 2rem;
+  letter-spacing: 2px;
 }
 
 .work-sample-section {
